@@ -1,0 +1,21 @@
+.navbar-right(ng-controller="LoginCtrl")
+	form.navbar-form(ng-hide="identity.isAuthenticated()")
+		.form-group(id="login-form")
+			input.form-control(type="text", placeholder="Username", ng-model="user.username")
+			input.form-control(type="password", placeholder="Password", ng-model="user.password")
+		button.btn.btn-primary(ng-click="login(user)", id="login-button") Login
+		a.btn.btn-primary(href="#/signup") Sign up
+
+	ul.nav.navbar-nav.navbar-right(ng-show="identity.isAuthenticated()", id="navbar-right")
+		li.dropdown
+			a.dropdown-toggle(href="", data-toggle="dropdown")
+				| {{ identity.currentUser.firstName + ' ' + identity.currentUser.lastName }}
+				span.caret
+			ul.dropdown-menu
+				li(ng-show="identity.currentUser.isAdmin()")
+					a(href="#/admin/users") Users
+				li.divider(ng-show="identity.currentUser.isAdmin()")
+				li(ng-show="identity.isAuthenticated()")
+					a(href="#/profile") Profile
+				li
+					a(href="#" ng-click="logout()") Sign out

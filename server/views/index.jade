@@ -1,0 +1,25 @@
+extends includes/layout
+block main-content
+	div.navbar.navbar-default(ng-controller="MainCtrl")
+		.container
+			div.navbar-responsive-collapse
+				header.navbar-collapse
+					.container
+						.navbar-header
+							a.navbar-brand(href="#/") 
+								| Total Score
+						.navbar-colapse.copalse
+							ul.nav.navbar-nav(id="main-nav")
+								li(id="nav-home")
+									a(href="#/") Home
+								li(ng-show="identity.isAuthenticated()" id="nav-scores")
+									a(href="#/scores") Scores
+								li(ng-show="identity.isAuthenticated()" id="nav-invitations")
+									a(href="#/invitations") Invitations
+										span.badge {{ identity.currentUser.invitationsCount }}
+							div(ng-include="'partials/account/login'")
+	section
+		div(ng-view)
+
+	footer.breadcrumb.text-center
+		| &copy; Ilian Iliev 2014

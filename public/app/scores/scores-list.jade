@@ -1,0 +1,31 @@
+.container
+	.row
+		.col-md-4.pull-right
+			select.form-control(ng-model="sort")
+				option(value=" ", bg-selected="'true'") Default
+				option(value="fromUsernameScore") My score
+				option(value="toUsernameScore") Opponents score
+				option(value="date") Date
+		.col-md-8
+			h4.align-right Sort
+	br
+	table.table
+		thead
+			tr
+				th Title
+				th Player 1
+				th Player 2
+				th Score
+				th Date
+		tbody
+			tr(ng-repeat="score in scores | orderBy:sort")
+				td
+					strong
+						a(href="#/score/{{ score._id }}") {{ score.gameName }}
+				td {{ score.fromUsername }}
+				td {{ score.toUsername }}
+				td {{ score.fromUsernameScore }} : {{ score.toUsernameScore }}
+				td {{ score.date | date: 'dd.mm.yy'}}
+script(type='text/javascript').
+	$('#main-nav li').removeClass('active');
+	$('#nav-scores').addClass('active');

@@ -1,0 +1,16 @@
+.container
+	table.table
+		thead
+			tr
+				th Username
+				th First name
+				th Last name
+				th Invitations
+		tbody
+			tr(ng-repeat="user in users")
+				td {{ user.username }}
+				td {{ user.firstName }}
+				td {{ user.lastName }}
+				td {{ user.invitationsCount }}
+script(type='text/javascript').
+	$('#main-nav li').removeClass('active');
