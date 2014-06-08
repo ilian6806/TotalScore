@@ -2,10 +2,30 @@
 	table.table.col-md-10
 		thead
 			tr
-				th(colspan="2") New invitations:
+				th(colspan="5") Send invitation:
 		tbody
 			tr
-				td.col-md-8 sdadsadas
+				td.col-md-2.centered.va-middle Game name: 
+				td.col-md-4
+					input(type="text").form-control.col-md-2
+				td.col-md-2.centered.va-middle Find user:
+				td.col-md-4
+					input(type="text").form-control.col-md-2
+				td.col-md-2
+					button.btn.btn-success.marginr Send
+	table.table.col-md-10
+		thead
+			tr
+				th New invitations:
+				th Date:
+				th
+		tbody
+			tr(ng-repeat="invitation in invitations")
+				td.col-md-6 
+					strong {{ invitation.fromUsername }} 
+					| invite you to play  
+					strong {{ invitation.gameName }}
+				td.col-md-2 {{ invitation.date | date: 'dd.mm.yy' }}
 				td.col-md-2.centered
 					button.btn.btn-success.marginr Accept
 					button.btn.btn-danger Decline

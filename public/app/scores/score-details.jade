@@ -1,0 +1,19 @@
+.container.col-md-6
+	div.panel.panel-default
+		div.panel-heading 
+			strong {{ score.gameName }}
+		div.panel-body
+			table.table
+					tr
+						td {{ score.fromUsername }} :
+						td
+							input(type="text" value="{{ score.fromUsernameScore }}" ng-model="score.fromUsernameScore").form-control
+					tr
+						td {{ score.toUsername }} :
+						td
+							input(type="text" value="{{ score.toUsernameScore }}" ng-model="score.toUsernameScore").form-control
+			button.btn.btn-success.pull-right(ng-click="updateScore(score)") Save
+
+script(type='text/javascript').
+	$('#main-nav li').removeClass('active');
+	$('#nav-scores').addClass('active');

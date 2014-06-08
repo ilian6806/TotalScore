@@ -23,11 +23,17 @@ app.config(function($routeProvider, $locationProvider) {
 		})
 		.when('/invitations', {
 			templateUrl: '/partials/invitations/invitations',
-			controller: 'InvitationsCtrl'
+			controller: 'InvitationsCtrl',
+			resolve: routeUserCheck.authenticated
 		})
 		.when('/scores', {
 			templateUrl: '/partials/scores/scores-list',
 			controller: 'ScoresListCtrl',
+			resolve: routeUserCheck.authenticated
+		})
+		.when('/score/:id', {
+			templateUrl: '/partials/scores/score-details',
+			controller: 'ScoreDetailsCtrl',
 			resolve: routeUserCheck.authenticated
 		})
 		.when('/courses', {

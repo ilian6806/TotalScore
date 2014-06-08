@@ -7,7 +7,11 @@ module.exports = function(app) {
 	app.post('/api/users', controllers.users.createUser);
 	app.put('/api/users', auth.isAuthenticated, controllers.users.updateUser);
 
-	app.get('/api/scores/:username', controllers.scores.getUserScores);
+	app.get('/api/scores/:username', auth.isAuthenticated, controllers.scores.getUserScores);
+	app.get('/api/score/:id', auth.isAuthenticated, controllers.scores.getScoreById);
+	app.put('/api/score/:id', auth.isAuthenticated, controllers.scores.updateScore);
+
+	app.get('/api/invitations/:username', controllers.invitations.getUserInvitations);
 
 	app.get('/api/courses', controllers.courses.getAllCourses);
 	app.get('/api/courses/:id', controllers.courses.getCourseById);

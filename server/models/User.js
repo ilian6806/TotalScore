@@ -45,7 +45,7 @@ module.exports.seedInitialUsers = function() {
 					salt: salt, 
 					hashPass: hashedPwd,
 					roles: ['admin'],
-					invitationsCount: 0
+					invitationsCount: 2
 				});
 
 				salt = encryption.generateSalt();

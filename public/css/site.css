@@ -20,6 +20,9 @@ span.badge {
   margin: 0 auto;
   margin-bottom: 30px;
 }
+.container {
+  float: none;
+}
 .marginl {
   margin-lef: 5px;
 }
@@ -27,10 +30,21 @@ span.badge {
   margin-right: 5px;
 }
 .centered {
-  text: align center;
+  text-align: center;
+}
+.va-middle {
+  vertical-align: middle;
 }
 .align-right {
   text-align: right;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  vertical-align: middle;
 }
 footer.breadcrumb {
   position: fixed;
