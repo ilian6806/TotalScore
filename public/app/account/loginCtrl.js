@@ -19,7 +19,10 @@ app.controller('LoginCtrl', function($scope, $location, notifier, identity, auth
                 $scope.user.username = '';
                 $scope.user.password = '';
             }
-			$location.path('/');
+			//$location.path('/');
+			$('.main-nav').html('');
+			$('.navbar-right').html('');
+		    location.reload();
 		});
 	}
 });

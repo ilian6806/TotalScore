@@ -9,9 +9,8 @@ module.exports = function() {
 				console.log('Error finding user...');
 				return;
 			}
-		console.log(password);
-		if (user) console.log(user.authenticate(password));
-		if (user && user.authenticate(password)) {
+			
+			if (user && user.authenticate(password)) {
 				return done(null, user);
 			} else {
 				return done(null, false);

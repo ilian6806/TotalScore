@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var user = require('../models/User');
-var course = require('../models/Course');
 var invitations = require('../models/Invitation');
 var scores = require('../models/Score');
 
@@ -22,7 +21,6 @@ module.exports = function(config) {
 	});
 
 	user.seedInitialUsers();
-	course.seedInitialCourses();
 	invitations.seedInitialCourses();
 	scores.seedInitialScores();
 };

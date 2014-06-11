@@ -17,6 +17,7 @@
 				th Player 2
 				th Score
 				th Date
+				th
 		tbody
 			tr(ng-repeat="score in scores | orderBy:sort")
 				td
@@ -25,7 +26,9 @@
 				td {{ score.fromUsername }}
 				td {{ score.toUsername }}
 				td {{ score.fromUsernameScore }} : {{ score.toUsernameScore }}
-				td {{ score.date | date: 'dd.mm.yy'}}
+				td {{ score.date | date: 'dd.MM.yy'}}
+				td
+					button.btn.btn-danger(ng-click="deleteScore(score)") Delete
 script(type='text/javascript').
 	$('#main-nav li').removeClass('active');
 	$('#nav-scores').addClass('active');

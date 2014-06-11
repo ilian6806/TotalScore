@@ -1,18 +1,19 @@
 .container
-	table.table.col-md-10
-		thead
-			tr
-				th(colspan="5") Send invitation:
-		tbody
-			tr
-				td.col-md-2.centered.va-middle Game name: 
-				td.col-md-4
-					input(type="text").form-control.col-md-2
-				td.col-md-2.centered.va-middle Find user:
-				td.col-md-4
-					input(type="text").form-control.col-md-2
-				td.col-md-2
-					button.btn.btn-success.marginr Send
+	form(name="sendInvitationForm")
+		table.table.col-md-10
+			thead
+				tr
+					th(colspan="5") Send invitation:
+			tbody
+				tr
+					td.col-md-2.centered.va-middle Game name: 
+					td.col-md-4
+						input(type="text", ng-model="invitation.gameName", required).form-control.col-md-2
+					td.col-md-2.centered.va-middle User:
+					td.col-md-4
+						input(type="text", ng-model="invitation.user", required).form-control.col-md-2
+					td.col-md-2
+						button.btn.btn-success.marginr(ng-click="send(invitation)", ng-disabled="sendInvitationForm.$invalid") Send
 	table.table.col-md-10
 		thead
 			tr
@@ -25,10 +26,10 @@
 					strong {{ invitation.fromUsername }} 
 					| invite you to play  
 					strong {{ invitation.gameName }}
-				td.col-md-2 {{ invitation.date | date: 'dd.mm.yy' }}
+				td.col-md-2 {{ invitation.date | date: 'dd.MM.yy' }}
 				td.col-md-2.centered
-					button.btn.btn-success.marginr Accept
-					button.btn.btn-danger Decline
+					button.btn.btn-success.marginr(ng-click="accept(invitation)") Accept
+					button.btn.btn-danger(ng-click="decline(invitation)") Decline
 
 script(type='text/javascript').
 	$('#main-nav li').removeClass('active');

@@ -18,7 +18,7 @@ module.exports.seedInitialScores = function() {
 			console.log('Cannot find users: ' + err);
 			return;
 		}
-
+		//Score.create({fromUsername: "ilian6806", toUsername: "stefidka6806", fromUsernameScore: 11, toUsernameScore: 25, gameName: "testDelete", date: new Date()});
 		//Score.remove({}, function() {
 			if (collection.length === 0) {
 					Score.create({fromUsername: "ilian6806", toUsername: "stefidka6806", fromUsernameScore: 10, toUsernameScore: 25, gameName: "biliard", date: new Date()});
