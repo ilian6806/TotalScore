@@ -1,7 +1,7 @@
 {
-  "name": "myPhotos",
+  "name": "TotalScore",
   "version": "0.0.1",
-  "description": "myPhotos MEAN Stack app",
+  "description": "MEAN Stack app forr summarizing scores",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ilian6806/myPhotos.git"
+    "url": "https://github.com/ilian6806/TotalScore.git"
   },
   "author": "Ilian Iliev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ilian6806/myPhotos/issues"
+    "url": "https://github.com/ilian6806/TotalScore/issues"
   },
-  "homepage": "https://github.com/ilian6806/myPhotos",
+  "homepage": "https://github.com/ilian6806/TotalScore",
   "dependencies": {
     "body-parser": "^1.0.2",
     "cookie-parser": "^1.1.0",

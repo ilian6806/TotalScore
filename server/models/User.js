@@ -47,41 +47,41 @@ module.exports.seedInitialUsers = function() {
 				invitationsCount: 0
 			});
 
-			salt = encryption.generateSalt();
-			hashedPwd = encryption.generateHashedPassword(salt, 'stefka');
-			User.create({
-				username: 'stefidka6806', 
-				firstName: 'Stefi', 
-				lastName: 'Vacheva', 
-				salt: salt, 
-				hashPass: hashedPwd,
-				roles: ['standart'],
-				invitationsCount: 0
-			});
+			// salt = encryption.generateSalt();
+			// hashedPwd = encryption.generateHashedPassword(salt, 'stefka');
+			// User.create({
+			// 	username: 'stefidka6806', 
+			// 	firstName: 'Stefi', 
+			// 	lastName: 'Vacheva', 
+			// 	salt: salt, 
+			// 	hashPass: hashedPwd,
+			// 	roles: ['standart'],
+			// 	invitationsCount: 0
+			// });
 
-			salt = encryption.generateSalt();
-			hashedPwd = encryption.generateHashedPassword(salt, 'lubo');
-			User.create({
-				username: 'lubo6806', 
-				firstName: 'Lubo', 
-				lastName: 'Gavadinov', 
-				salt: salt, 
-				hashPass: hashedPwd,
-				roles: ['standart'],
-				invitationsCount: 0
-			});
+			// salt = encryption.generateSalt();
+			// hashedPwd = encryption.generateHashedPassword(salt, 'lubo');
+			// User.create({
+			// 	username: 'lubo6806', 
+			// 	firstName: 'Lubo', 
+			// 	lastName: 'Gavadinov', 
+			// 	salt: salt, 
+			// 	hashPass: hashedPwd,
+			// 	roles: ['standart'],
+			// 	invitationsCount: 0
+			// });
 			
-			salt = encryption.generateSalt();
-			hashedPwd = encryption.generateHashedPassword(salt, 'svetlio');
-			User.create({
-				username: 'svetlio6806', 
-				firstName: 'Svetoslav', 
-				lastName: 'Cenov', 
-				salt: salt, 
-				hashPass: hashedPwd,
-				roles: ['standart'],
-				invitationsCount: 0
-			});
+			// salt = encryption.generateSalt();
+			// hashedPwd = encryption.generateHashedPassword(salt, 'svetlio');
+			// User.create({
+			// 	username: 'svetlio6806', 
+			// 	firstName: 'Svetoslav', 
+			// 	lastName: 'Cenov', 
+			// 	salt: salt, 
+			// 	hashPass: hashedPwd,
+			// 	roles: ['standart'],
+			// 	invitationsCount: 0
+			// });
 
 			console.log('Users added');
 		}

@@ -11,7 +11,7 @@ module.exports = {
 
 	production: {
 		rootPath: rootPath,
-		db: 'mongodb://admin:ilian6806admin@ds033257.mongolab.com:33257/my-photos',
+		db: 'mongodb://admin:ilian6806totalscore@ds039088.mongolab.com:39088/total-score',
 		port: process.env.PORT || 9000
 	}
 }

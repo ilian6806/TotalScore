@@ -4,6 +4,7 @@ var invitations = require('../models/Invitation');
 var scores = require('../models/Score');
 
 module.exports = function(config) {
+
 	mongoose.connect(config.db);
 
 	var db = mongoose.connection;
