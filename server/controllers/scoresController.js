@@ -22,7 +22,15 @@ module.exports = {
 	updateScore: function (req, res) {
 		var updatedScore = req.body;
 
-		Score.update({ _id: req.body._id }, updatedScore, function() {
+		Score.findOne({ _id: req.body._id }).exec(function(err, score) {
+			if (err) {
+				console.log('No such score: ' + err);
+			}
+
+			score.fromUsernameScore = updatedScore.fromUsernameScore;
+			score.toUsernameScore = updatedScore.toUsernameScore;
+			score.save();
+
 			res.end();
 		});
 	},
