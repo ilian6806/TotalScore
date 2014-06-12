@@ -20,7 +20,7 @@ module.exports = function(config) {
 		console.log('DB error: ' + err);
 	});
 
-	user.seedInitialUsers();
-	invitations.seedInitialCourses();
-	scores.seedInitialScores();
+	 user.seedInitialUsers();
+	// invitations.seedInitialCourses();
+	// scores.seedInitialScores();
 };

@@ -35,8 +35,7 @@ app.controller('InvitationsCtrl', function($scope, $http, InvitationsResource, n
 	}
 
 	$scope.decline = function(invitation) {
-		var declineConfirmed = confirm('Are sure you want to decline the invitation from ' + invitation.fromUsername + '?');
-		if(declineConfirmed) {
+		ConfirmController.show('Are sure you want to decline the invitation from ' + invitation.fromUsername + '?', function() {
 			$http.post('/api/invitations/decline', invitation)
 			.success(function(res) {
 				notifier.success('Invitation from ' + invitation.fromUsername + ' declined.');
@@ -47,6 +46,6 @@ app.controller('InvitationsCtrl', function($scope, $http, InvitationsResource, n
 			.error(function(res) {
 				notifier.error('Something went wrong...');
 			});
-		}
+		});
 	}
 });
